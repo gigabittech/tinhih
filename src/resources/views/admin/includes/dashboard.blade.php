@@ -1,0 +1,9 @@
+@if(\Illuminate\Support\Facades\Auth::user()->type=='admin')
+    @include('admin.includes.dashboards.admin')
+@elseif(\Illuminate\Support\Facades\Auth::user()->type=='provider')
+    @include('admin.includes.dashboards.provider')
+@elseif(\Illuminate\Support\Facades\Auth::user()->type=='community_member')
+    @include('admin.includes.dashboards.community_member')
+@else
+    @include('admin.includes.dashboards.client')
+@endif
